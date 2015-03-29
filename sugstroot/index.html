@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]> <html class="no-js ie6 ie" lang="en"> <![endif]-->
+<!--[if IE 7 ]>    <html class="no-js ie7 ie" lang="en"> <![endif]-->
+<!--[if IE 8 ]>    <html class="no-js ie8 ie" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>Suggestaurant - Share Your Food</title>
+	<meta name="description" content="Share your food and eat it too. Order online and trade suggestions of the best delivery and take-out restaurants with your friends and neighbors.">
+	<script src="/js/jquery.placeholder.min.js"></script>
+	<script src="/js/jquery.main2.js"></script>
+	<script src="/js/jquery-social-stream/js/jquery.social.stream.1.4.3.min.js"></script>
+	<script src="/js/jquery-social-stream/js/jquery.social.stream.wall.1.2.js"></script>
+	<script src="/js/jquery.preload.min.js"></script>
+	<!--[if lt IE 9]>
+		<script src="/js/ie.js"></script>
+		<script src="/js/respond.min.js"></script>
+	<![endif]-->
+	<link rel="stylesheet" type="text/css" href="/css/all.css" />
+	<link rel="stylesheet" type="text/css" href="/js/jquery-social-stream/css/dcsns_dark.css" />
+	<link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico.dagon" />
+	<link rel="icon" type="image/x-icon" href="/images/favicon.ico.dagon" />
+
+	<link rel="shortcut icon" type="image/vnd.microsoft.icon"  href="/images/favicon.ico.dagon" />
+</head>
+<body style="background-image: url(/images/backg2.jpg);background-repeat: no-repeat; background-size: 100%;">
+	<div class="wrapper size02">
+		<div class="w1">
+			<div class="w2">
+				<div class="w3">
+					<header class="logo-holder">
+<a class="logo2" href="#">suggestaurant. share your food</a>
+					</header>
+					<div id="main">
+<section class="visual">
+	<div style="text-align:left;margin-bottom:6px;" id="reveal_box">
+		<img id="reveal_full">
+		<div id="defaultCountdown"></div>
+	</div>
+		<div>
+	<ul class="thumbnails">
+		<li id="reveal_list01">
+			<img id="reveal_image01">
+		</li>
+		<li id="reveal_list02">
+			<img id="reveal_image02">
+		</li>
+		<li id="reveal_list03">
+			<img id="reveal_image03">
+		</li>
+		<li class="reveal_list04">
+			<img id="reveal_image04">
+		</li>
+		<li class="fuzzy">
+			<img id="reveal_image05">
+			<span class="info">...not this soon</span>
+		</li>
+		<li class="fuzzy">
+			<img id="reveal_image06">
+			<span class="info">...not this soon</span>
+		</li>
+		<li class="fuzzy">
+			<img id="reveal_image07">
+			<span class="info">...not this soon</span>
+		</li>
+	</ul>
+		</div>
+	<p style="padding-top:2px;">more reveals about suggestaurant's features coming soon...</p>
+	
+</section>
+<script>
+$("document").ready(function() {
+	var sz;
+	var theight = "105px";
+	var taheight = "123px";
+	var tmargin = "18px";
+	var tspc = "9x";
+	var tm2 = "10px";
+	var wid = $(".logo2").css('width');
+	wid = wid.substr(0,3);
+	if (wid < 300) {
+		sz = "small";
+		theight = "63px";
+		taheight = "74px";
+		tmargin = "12px";
+		tspc = "4px";
+		tm2 = "6px";
+	}
+	else {
+		sz = "large";
+	}
+	$.preload('/images/reveal_full_01_' + sz + '.png',
+		'/images/reveal_full_02_' + sz + '.png',
+		'/images/reveal_thumb_01_active_' + sz + '.png',
+		'/images/reveal_thumb_02_active_' + sz + '.png',
+		'/images/reveal_thumb_03_active_' + sz + '.png',
+		'/images/reveal_thumb_04_active_' + sz + '.png',
+		'/images/reveal_thumb_01_inactive_' + sz + '.png',
+		'/images/reveal_thumb_02_inactive_' + sz + '.png',
+		'/images/reveal_thumb_03_inactive_' + sz + '.png',
+		'/images/reveal_thumb_04_inactive_' + sz + '.png'
+	);
+	$("#reveal_full").attr("src",'/images/reveal_full_01_' + sz + '.png');
+	setThumbsInactive();
+	$("#reveal_image01").css('border', 'none');
+	$("#reveal_image02").css('border', 'none');
+	$("#reveal_image03").css('border', 'none');
+	$("#reveal_image04").css('border', 'none');
+	$("#reveal_list02").css('margin-left', tm2);
+//	$("#reveal_list03").css('margin-left', tm2);
+	$("#reveal_image01").attr("src",'/images/reveal_thumb_01_active_' + sz + '.png');
+	$("#reveal_image01").css('margin-top', "1px");
+	$("#reveal_image01").height(taheight);
+	$(".fuzzy").css('margin-left', tspc);
+	$("#reveal_image05").attr("src",'/images/reveal_thumb_05_fuzzy_' + sz + '.png');
+	$("#reveal_image06").attr("src",'/images/reveal_thumb_06_fuzzy_' + sz + '.png');
+	$("#reveal_image07").attr("src",'/images/reveal_thumb_07_fuzzy_' + sz + '.png');
+
+	function setThumbsInactive() {
+		$("#reveal_image01").attr("src",'/images/reveal_thumb_01_inactive_' + sz + '.png');
+		$("#reveal_image01").css('height', theight);
+		$("#reveal_image01").css('margin-top', tmargin);
+		$("#reveal_image02").attr("src",'/images/reveal_thumb_02_inactive_' + sz + '.png');
+		$("#reveal_image02").height(theight);
+		$("#reveal_image02").css('margin-top', tmargin);
+		$("#reveal_image03").attr("src",'/images/reveal_thumb_03_inactive_' + sz + '.png');
+		$("#reveal_image03").height(theight);
+		$("#reveal_image03").css('margin-top', tmargin);
+		$("#reveal_image04").attr("src",'/images/reveal_thumb_04_inactive_' + sz + '.png');
+		$("#reveal_image04").height(theight);
+		$("#reveal_image04").css('margin-top', tmargin);
+		$("#defaultCountdown").css('display', 'none');
+	}
+	$("#reveal_image01").click(function() {
+		setThumbsInactive();
+		$("#reveal_image01").attr("src",'/images/reveal_thumb_01_active_' + sz + '.png');
+		$("#reveal_image01").css('border', 'none');
+		$("#reveal_image01").height(taheight);
+		$("#reveal_image01").css('margin-top', "1px");
+		$("#reveal_full").attr("src",'/images/reveal_full_01_' + sz + '.png');
+	});
+	$("#reveal_image02").click(function() {
+		setThumbsInactive();
+		$("#reveal_image02").attr("src",'/images/reveal_thumb_02_active_' + sz + '.png');
+		$("#reveal_image02").css('border', 'none');
+		$("#reveal_image02").height(taheight);
+		$("#reveal_image02").css('margin-top', "1px");
+		$("#reveal_full").attr("src",'/images/reveal_full_02_' + sz + '.png');
+	});
+	$("#reveal_image03").click(function() {
+		setThumbsInactive();
+		$("#reveal_image03").attr("src",'/images/reveal_thumb_03_active_' + sz + '.png');
+		$("#reveal_image03").css('border', 'none');
+		$("#reveal_image03").height(taheight);
+		$("#reveal_image03").css('margin-top', "1px");
+		$("#reveal_full").attr("src",'/images/reveal_full_03_' + sz + '.png');
+	});
+	$("#reveal_image04").click(function() {
+		setThumbsInactive();
+		$("#reveal_image04").attr("src",'/images/reveal_thumb_04_active_' + sz + '.png');
+		$("#reveal_image04").css('border', 'none');
+		$("#reveal_image04").height(taheight);
+		$("#reveal_image04").css('margin-top', "1px");
+		$("#reveal_full").attr("src",'/images/reveal_full_04_' + sz + '.png');
+	});
+/*	$("#reveal_image07").click(function() {
+		setThumbsInactive();
+		$("#reveal_full").attr("src",'/images/reveal_full_07_' + sz + '.png');
+		$("#defaultCountdown").css('display','block');
+		var newYear = new Date();
+		newYear = new Date(newYear.getFullYear() + 1, 1 - 1, 1);
+		$('#defaultCountdown').countdown({
+			until: newYear,
+			format: "d:H:M:S",
+			layout: "{dn} {sep} {hn} {sep} {mn} {sep} {sn}",
+			labels: []
+		});
+	});
+*/
+
+});
+</script>
+						<aside class="tweets">
+							<header class="heading">
+								<strong class="title">hey, Suggestauranteur!</strong>
+								<a href="/pages/logout" class="link-out">sign out</a>
+							</header>
+							<div id="social_box" class="newpostholder"><div id="social-stream"></div></div>
+							<div class="links" style="margin-top:10px;">
+								<strong class="title">wanna know more?</strong>
+								<ul class="social-networks">
+									<li><a class="email" href="/pages/contact">email</a></li>
+									<li><a class="facebook" href="http://facebook.com/suggestaurant" target="_blank">facebook</a></li>
+									<li><a class="twitter" href="http://twitter.com/suggestaurant" target="_blank">twitter</a></li>
+									<li><a class="tumblr" href="http://suggestaurant.tumblr.com/" target="_blank">tumblr</a></li>
+								</ul>
+							</div>
+						</aside>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+<script>
+	
+$(document).ready(function($){
+	var outheight = $("#social_box").height() - 44;
+        $('#social-stream').dcSocialStream({
+                feeds: {
+                        twitter: {
+                                id: '#suggestaurant,#shareyourfood',
+				thumb: true,
+				images: 'thumb',
+				intro: '',
+				search: ''
+                        },
+                        facebook: {
+                                id: '357910104297704',
+				intro: ''
+                        },
+                        tumblr: {
+                                id: 'suggestaurant',
+				intro: ''
+                        }
+                },
+                twitterId: 'suggestaurant',
+		control : false,
+		
+		filter: false,
+		height: outheight,
+                iconPath: '/js/jquery-social-stream/images/dcsns-dark/',
+                imagePath: '/js/jquery-social-stream/images/dcsns-dark/'
+        });
+});
+</script>
+
+</body>
+</html>
