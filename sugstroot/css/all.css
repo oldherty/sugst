@@ -767,11 +767,11 @@ div #main {height:398px;}
 		width:24px;
 		height:24px;
 	}
-	.social-networks .email{background-position:-198px -378px;}
+	.social-networks .email, .social-networks .pinterest{background-position:-198px -378px;}
 	.social-networks .facebook{background-position:-234px -378px;}
 	.social-networks .twitter{background-position:-270px -378px;}
 	.social-networks .tumblr{background-position:-306px -378px;}
-	.social-networks .email:hover{background-position:-198px -406px;}
+	.social-networks .email:hover, .social-networks .pinterest:hover{background-position:-198px -406px;}
 	.social-networks .facebook:hover{background-position:-234px -406px;}
 	.social-networks .twitter:hover{background-position:-270px -406px;}
 	.social-networks .tumblr:hover{background-position:-306px -406px;}
