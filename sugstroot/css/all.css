@@ -610,9 +610,9 @@ div #main {height:398px;}
 /*	border:1px solid #808080;
 */	margin-top: 12px;
 /*	height: 63px;
-	width: 69px;
+	width: 69px; */
 	cursor: pointer;
-*/}
+}
 
 .thumbnails .info{
 	position:absolute;
